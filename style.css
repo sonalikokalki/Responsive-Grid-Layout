@@ -1,0 +1,126 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+.grid_title{
+    color:rgba(78,25,186,1) ;
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 400;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 2rem;
+  padding:0.7rem 5rem;
+
+}
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.card_image {
+  box-sizing: border-box;
+  padding: 0;
+  border: none;
+  margin: auto;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.card_text {
+  color:#565252 ;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background: rgb(2,0,36);
+  background: linear-gradient(299deg, rgba(2,0,36,1) 0%, rgba(78,25,186,1) 43%, rgba(255,0,87,1) 100%);
+  z-index: 999;
+}
+.card:hover .overlay {
+  width: 100%;
+  opacity: 1;
+}
+.text-specification {
+  color: white;
+  font-size: 15px;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  opacity: 0;
+  transform: translate(-10%, -10%);
+  z-index: 9999;
+}
+.text-specification .title {
+  padding-bottom: 1rem;
+  font-size: 2rem;
+}
+.card:hover .text-specification {
+  opacity: 1;
+  transition: 0.5s ease;
+  color: white;
+}
+.card_content {
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+.card_content  div{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 0.5rem;
+}
+.card_content img{
+  width: 1rem;
+  padding: 0.3rem;
+}
+.card_content :hover .overlay {
+  width: 100%;
+  opacity: 0.5;
+}
+@media screen and (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: auto auto auto;
+  }
+  @media screen and (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: auto auto;
+    }
+    .grid_title{
+        font-size: 2.5rem;
+    }
+  }
+  @media screen and (min-width: 375px) and (max-width: 426px) {
+    .grid-container {
+      grid-template-columns: auto;
+    }
+    .grid_title{
+        font-size: 1.7rem;
+    }
+    .text-specification .title{
+      font-size: 1.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .text {
+      font-size: 0rem;
+    }
+  }
+}
